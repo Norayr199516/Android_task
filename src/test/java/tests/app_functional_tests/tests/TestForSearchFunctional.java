@@ -13,7 +13,7 @@ public class TestForSearchFunctional extends LandingPageSkipping {
         homePage
                 .clickOnSearchButton()
                 .fillSearchField(Constants.SEARCH_TEXT);
-        softAssert.assertEquals(searchResultsPage.getTheFirstSearchResultTitle(), "Constants.SEARCH_TEXT");
+        softAssert.assertEquals(searchResultsPage.getTheFirstSearchResultTitle(), Constants.SEARCH_TEXT);
         softAssert.assertAll();
     }
 
