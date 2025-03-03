@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Parallel Test Suite" parallel="tests" thread-count="2">
+
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+    </listeners>
+
+    <test name="Device1">
+        <parameter name="udid" value="emulator-5554" />
+        <parameter name="port" value="4723" />
+        <classes>
+            <class name="tests.app_functional_tests.tests.TestForHomePage" />
+            <class name="tests.app_functional_tests.tests.TestForScroll" />
+            <class name="tests.app_functional_tests.tests.TestForSearchFunctional" />
+        </classes>
+    </test>
+
+    <test name="Device2">
+        <parameter name="udid" value="emulator-5556" />
+        <parameter name="port" value="4725" />
+        <classes>
+            <class name="tests.app_functional_tests.tests.TestForHomePage" />
+            <class name="tests.app_functional_tests.tests.TestForScroll" />
+            <class name="tests.app_functional_tests.tests.TestForSearchFunctional" />
+        </classes>
+    </test>
+
+</suite>
